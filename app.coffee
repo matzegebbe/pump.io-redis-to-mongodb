@@ -94,7 +94,7 @@ async.waterfall [
   (callback) ->
     dbt.connect config_target.params, callback
   (callback) ->
-    async.each tabs, ((tabname, callb) ->
+    async.eachLimit tabs,2, ((tabname, callb) ->
       console.log "processing: " + tabname
       dbs.scan tabname
       , ((result) ->
