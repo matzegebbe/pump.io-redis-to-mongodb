@@ -69,8 +69,8 @@ config_source =
   params: {"host":"localhost","database":5,"port":6379}
 
 config_target =
-  "driver": "mongodb"
-  "params": {"host":"localhost","dbname": "pumpio"}
+  driver: "mongodb"
+  params: {"host":"localhost","dbname": "pumpio"}
 
 dbs = Databank.get(config_source.driver, config_source.params)
 dbt = Databank.get(config_target.driver, config_target.params)
